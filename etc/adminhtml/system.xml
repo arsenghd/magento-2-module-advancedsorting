@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="advancedSorting" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Advanced Sorting</label>
+            <tab>yereone</tab>
+            <resource>Yereone_Core::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="disable_position" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Disable sorting option 'position'</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="advanced_sorting_options" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Edit Sorting Options</label>
+                    <frontend_model>Yereone\AdvancedSorting\Block\Adminhtml\System\Config\Form\Field\ListSort</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="bestsellers_data_source" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Best Sellers Data Source</label>
+                    <source_model>Yereone\AdvancedSorting\Model\Config\Source\BestSellersDataMethod</source_model>
+                    <comment>Real Time method requires more performance and is not recommended for stores that have a lot of products and sales.</comment>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="bestsellers_period" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Bestsellers Period</label>
+                    <source_model>Yereone\AdvancedSorting\Model\Config\Source\BestsellersPeriod</source_model>
+                    <depends>
+                    	<field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="most_viewed_period" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Most Viewed Period (days)</label>
+                    <comment>Leave empty for life-time statistics.</comment>
+                    <depends>
+                    	<field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="saving_type" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Use Percentage for Biggest Saving</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

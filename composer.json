@@ -1,0 +1,30 @@
+{
+	"name" : "yereone/module-advanced-sorting",
+	"description" : "Magento 2 Advanced Sorting",
+	"require" : {
+		"yereone/module-core" : "*"
+	},
+	"type" : "magento2-module",
+	"version" : "1.0.0",
+	"license" : "OSL-3.0",
+	"keywords" : [
+		"magento 2",
+		"yereone",
+		"advanced sorting",
+		"sorting options"
+	],
+	"authors" : [{
+			"name" : "Yereone",
+			"email" : "info@yereone.com",
+			"homepage" : "https://www.yereone.com/"
+		}
+	],
+	"autoload" : {
+		"files" : [
+			"registration.php"
+		],
+		"psr-4" : {
+			"Yereone\\AdvancedSorting\\" : ""
+		}
+	}
+}

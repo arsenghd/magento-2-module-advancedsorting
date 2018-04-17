@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Yereone_AdvancedSorting::advancedSorting" title="Advanced Sorting" module="Yereone_AdvancedSorting" parent="Yereone_Core::core" sortOrder="10" resource="Yereone_Core::config"/>
+        <add id="Yereone_AdvancedSorting::config" title="Configuration" module="Yereone_AdvancedSorting" action="adminhtml/system_config/edit/section/advancedSorting" parent="Yereone_AdvancedSorting::advancedSorting" sortOrder="20" resource="Yereone_Core::config"/>
+    </menu>
+</config>
